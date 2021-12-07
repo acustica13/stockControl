@@ -18,18 +18,6 @@ public class SupplierController {
     @Autowired
     private SupplierRepository supplierRepository;
 
-/*    @PostMapping("/proveedor")
-    public ResponseEntity<?> supplierNew(
-            @RequestParam("name") String name,
-            @RequestParam("location") String location,
-            @RequestParam("phone") int phone,
-            @RequestParam("email") String email,
-            @RequestParam("postcode") int postcode) {
-        Supplier newSupplier = new Supplier(name, location, phone, email, postcode);
-        supplierRepository.save(newSupplier);
-        return new ResponseEntity<>(newSupplier, HttpStatus.OK);
-    }*/
-
     @PostMapping("/proveedor/nuevo")
     public ResponseEntity<?> supplierNew(@RequestBody Supplier newSupplier) {
         supplierRepository.save(newSupplier);

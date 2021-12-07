@@ -15,14 +15,6 @@ public class CategoryController {
     @Autowired
     private CategoryRepository categoryRepository;
 
-/*    @PostMapping("/categoria")
-    public ResponseEntity<?> categoryNew(
-            @RequestParam("nombre") String name) {
-        Category newCategory = new Category(name);
-        categoryRepository.save(newCategory);
-        return new ResponseEntity<>(newCategory, HttpStatus.OK);
-    }*/
-
     @PostMapping("/categoria/nuevo")
     public ResponseEntity<?> categoryNew(@RequestBody Category newCategory) {
         categoryRepository.save(newCategory);

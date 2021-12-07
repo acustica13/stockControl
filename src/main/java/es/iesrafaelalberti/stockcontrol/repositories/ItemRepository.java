@@ -17,4 +17,7 @@ public interface ItemRepository extends CrudRepository<Item, Long> {
 
     @Query("select distinct i.brand from Item i")
     List<String> getBrands();
+
+    @Query(value="delete from shops_items where item_id = ?1", nativeQuery = true)
+    Integer deleteItemRelationShopById(long id);
 }

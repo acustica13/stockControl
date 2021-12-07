@@ -39,6 +39,7 @@ public class ItemController {
         if (oldItem.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+//        itemRepository.deleteItemRelationShopById(id);
         itemRepository.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

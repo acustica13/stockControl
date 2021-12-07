@@ -37,10 +37,19 @@ public class Item {
             inverseJoinColumns = @JoinColumn(name = "category_id"))
     Set<Category> categories = new HashSet<>();
 
-    // N:M con shop
+   // N:M con shop
     @JsonBackReference(value = "item_shops")
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "items")
+    @ManyToMany(fetch = FetchType.LAZY, cascade =  CascadeType.MERGE)
+    @JoinTable(
+            name = "shops_items",
+            joinColumns = @JoinColumn(name = "item_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "shop_id", referencedColumnName = "id"))
     Set<Shop> shops = new HashSet<>();
+
+/*     @JsonBackReference(value = "item_shops")
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "items")
+    Set<Shop> shops = new HashSet<>();*/
+
 
     //Relation between item - supplier. M:1
     @JsonBackReference(value="item_supplier")

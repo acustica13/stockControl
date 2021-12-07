@@ -16,18 +16,6 @@ public class ShopController {
     @Autowired
     private ShopRepository shopRepository;
 
-/*    @PostMapping("/tienda")
-    public ResponseEntity<?> shopNew(
-            @RequestParam("name") String name,
-            @RequestParam("location") String location,
-            @RequestParam("phone") int phone,
-            @RequestParam("email") String email,
-            @RequestParam("postcode") int postcode) {
-        Shop newShop = new Shop(name, location, phone, email, postcode);
-        shopRepository.save(newShop);
-        return new ResponseEntity<>(newShop, HttpStatus.OK);
-    }*/
-
     @PostMapping("/tienda/nuevo")
     public ResponseEntity<?> shopNew(@RequestBody Shop newShop) {
         shopRepository.save(newShop);

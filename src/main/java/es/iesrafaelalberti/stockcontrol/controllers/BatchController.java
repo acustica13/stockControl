@@ -14,14 +14,6 @@ public class BatchController {
     @Autowired
     private BatchRepository batchRepository;
 
-/*    @PostMapping("/lote")
-    public ResponseEntity<?> batchNew(
-            @RequestParam("fechaCaducidad") LocalDate expirationDate) {
-        Batch newBatch = new Batch(expirationDate);
-        batchRepository.save(newBatch);
-        return new ResponseEntity<>(newBatch, HttpStatus.OK);
-    }*/
-
     @PostMapping("/lote/nuevo")
     public ResponseEntity<?> batchNew(@RequestBody Batch newBatch) {
         batchRepository.save(newBatch);
