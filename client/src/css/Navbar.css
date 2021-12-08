@@ -1,0 +1,133 @@
+.navbar {
+    background-color: var(--white);
+    height: 7vh;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.03) 0px 6px 24px 0px;
+    min-width: 400px;
+  }
+
+  .left-menu {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    margin-left: 2rem;
+    margin-top: 0.3rem;
+  }
+
+  .right-menu div {
+    display:inline;
+    margin-right: 2rem;
+    background-color: var(--emphasis-color);
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .right-menu div:hover {
+    background-color: var(--emphasis-color-dark);
+    cursor: pointer;
+  }
+
+  .darkTheme, .logout {
+    display: inline-flex;
+    align-items: center;
+  }
+  .darkTheme-text, .logout-text {
+    letter-spacing: 0.5px;
+    margin-bottom: 1px;
+  }
+
+  .darkTheme, .darkTheme-text, .logout, .logout-text {
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .menu-bars {
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+  }
+
+  .menu-bars .nav-icons {
+    color: var(--main-text-color);
+    font-size: 1.5rem;
+  }
+
+  .menu-bars .nav-icons:hover {
+    color: var(--emphasis-color);
+  }
+
+  .nav-menu {
+    background-color: var(--white);
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: 850ms;
+  }
+
+  .nav-menu.active {
+    z-index: 2;
+    left: 0;
+    transition: 350ms;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 30px 60px -30px;
+  }
+
+  .nav-text {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    height: 60px;
+  }
+
+  .nav-text:last-child {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .nav-text:hover {
+    border-right: solid var(--emphasis-color);
+  }
+
+  .nav-text a {
+    text-decoration: none;
+    color: var(--main-text-color);
+    font-size: 18px;
+    font-weight: bold;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+  }
+
+  .nav-text a:hover {
+    color: var(--emphasis-color);
+  }
+
+  .nav-menu-items {
+    width: 100%;
+  }
+
+  .navbar-toggle {
+    background-color: var(--white);
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  span {
+    margin-left: 16px;
+  }

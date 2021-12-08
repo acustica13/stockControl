@@ -1,0 +1,411 @@
+openapi: "3.0.3"
+info:
+  title: "stock_control API"
+  description: "stock_control API"
+  version: "1.0.0"
+servers:
+  - url: "https://stock_control"
+paths:
+  /categoria/nuevo:
+    post:
+      summary: "POST categoria/nuevo"
+      operationId: "categoryNew"
+      responses:
+        "200":
+          description: "OK"
+  /categoria/{id}:
+    get:
+      summary: "GET categoria/{id}"
+      operationId: "categoryDetail"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+    put:
+      summary: "PUT categoria/{id}"
+      operationId: "categoryUpdate"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+    delete:
+      summary: "DELETE categoria/{id}"
+      operationId: "categoryDelete"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+  /categorias:
+    get:
+      summary: "GET categorias"
+      operationId: "categoryList"
+      responses:
+        "200":
+          description: "OK"
+  /login:
+    post:
+      summary: "POST login"
+      operationId: "login"
+      responses:
+        "200":
+          description: "OK"
+  /logout:
+    get:
+      summary: "GET logout"
+      operationId: "logout"
+      responses:
+        "200":
+          description: "OK"
+  /lote/nuevo:
+    post:
+      summary: "POST lote/nuevo"
+      operationId: "batchNew"
+      responses:
+        "200":
+          description: "OK"
+  /lote/{id}:
+    get:
+      summary: "GET lote/{id}"
+      operationId: "batchDetail"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+    put:
+      summary: "PUT lote/{id}"
+      operationId: "batchUpdate"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+    delete:
+      summary: "DELETE lote/{id}"
+      operationId: "batchDelete"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+  /lotes:
+    get:
+      summary: "GET lotes"
+      operationId: "batchList"
+      responses:
+        "200":
+          description: "OK"
+  /producto/nuevo:
+    post:
+      summary: "POST producto/nuevo"
+      operationId: "itemNew"
+      responses:
+        "200":
+          description: "OK"
+  /producto/{id}:
+    get:
+      summary: "GET producto/{id}"
+      operationId: "itemDetail"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+    put:
+      summary: "PUT producto/{id}"
+      operationId: "itemUpdate"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+    delete:
+      summary: "DELETE producto/{id}"
+      operationId: "itemDelete"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+  /productos:
+    get:
+      summary: "GET productos"
+      operationId: "itemList"
+      parameters:
+        - name: "page"
+          in: "query"
+          required: true
+          schema:
+            type: "number"
+            format: "int32"
+        - name: "name"
+          in: "query"
+          required: true
+          schema:
+            type: "string"
+        - name: "brand"
+          in: "query"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+  /productos/brand:
+    get:
+      summary: "GET productos/brand"
+      operationId: "itemsBrand"
+      responses:
+        "200":
+          description: "OK"
+  /proveedor/nuevo:
+    post:
+      summary: "POST proveedor/nuevo"
+      operationId: "supplierNew"
+      responses:
+        "200":
+          description: "OK"
+  /proveedor/{id}:
+    get:
+      summary: "GET proveedor/{id}"
+      operationId: "supplierDetail"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+    put:
+      summary: "PUT proveedor/{id}"
+      operationId: "supplierUpdate"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+    delete:
+      summary: "DELETE proveedor/{id}"
+      operationId: "supplierDelete"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+  /proveedores:
+    get:
+      summary: "GET proveedores"
+      operationId: "supplierList"
+      parameters:
+        - name: "page"
+          in: "query"
+          required: true
+          schema:
+            type: "number"
+            format: "int32"
+      responses:
+        "200":
+          description: "OK"
+  /register:
+    post:
+      summary: "POST register"
+      operationId: "userNew"
+      responses:
+        "200":
+          description: "OK"
+  /tienda/nuevo:
+    post:
+      summary: "POST tienda/nuevo"
+      operationId: "shopNew"
+      responses:
+        "200":
+          description: "OK"
+  /tienda/{id}:
+    get:
+      summary: "GET tienda/{id}"
+      operationId: "shopDetail"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+    put:
+      summary: "PUT tienda/{id}"
+      operationId: "shopUpdate"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+    delete:
+      summary: "DELETE tienda/{id}"
+      operationId: "shopDelete"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+  /tiendas:
+    get:
+      summary: "GET tiendas"
+      operationId: "shopList"
+      parameters:
+        - name: "page"
+          in: "query"
+          required: true
+          schema:
+            type: "number"
+            format: "int32"
+      responses:
+        "200":
+          description: "OK"
+  /tiendas/producto/{id}:
+    get:
+      summary: "GET tiendas/producto/{id}"
+      operationId: "shopListByItemId"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+        - name: "page"
+          in: "query"
+          required: true
+          schema:
+            type: "number"
+            format: "int32"
+      responses:
+        "200":
+          description: "OK"
+  /usuario/{id}:
+    get:
+      summary: "GET usuario/{id}"
+      operationId: "userDetail"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+    put:
+      summary: "PUT usuario/{id}"
+      operationId: "userUpdate"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+    delete:
+      summary: "DELETE usuario/{id}"
+      operationId: "userDelete"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "number"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+  /usuarios:
+    get:
+      summary: "GET usuarios"
+      operationId: "userList"
+      parameters:
+        - name: "page"
+          in: "query"
+          required: true
+          schema:
+            type: "number"
+            format: "int32"
+      responses:
+        "200":
+          description: "OK"

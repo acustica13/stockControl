@@ -1,0 +1,14 @@
+/* FOOTER */
+footer {
+    height: 7vh;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 1em;
+    color: var(--white);
+    margin-top: 6vh;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--white);
+}

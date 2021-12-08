@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+  db:
+    image: mariadb
+    restart: always
+    ports:
+      - "5000:3306"
+    volumes:
+      - ./db-init:/docker-entrypoint-initdb.d/
+    environment:
+      MYSQL_DATABASE: db_stockcontrol
+      MYSQL_USER: root
+      MYSQL_PASSWORD: asd123
+      MYSQL_ROOT_PASSWORD: asd123
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      - PMA_ARBITRARY=1
+
+  server:
+    build: .
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - "db"
+    volumes:
+      - "./server:/usr/stock-control/server"
+    command: java -jar stock-control.jar
+
+  client:
+    image: nginx
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - "server"
+    volumes:
+      - "./client:/usr/share/nginx/html"
