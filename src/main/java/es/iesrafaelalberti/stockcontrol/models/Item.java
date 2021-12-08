@@ -46,11 +46,6 @@ public class Item {
             inverseJoinColumns = @JoinColumn(name = "shop_id", referencedColumnName = "id"))
     Set<Shop> shops = new HashSet<>();
 
-/*     @JsonBackReference(value = "item_shops")
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "items")
-    Set<Shop> shops = new HashSet<>();*/
-
-
     //Relation between item - supplier. M:1
     @JsonBackReference(value="item_supplier")
     @ManyToOne

@@ -10,7 +10,6 @@ import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityNotFoundException;
-import java.time.LocalDate;
 import java.util.Optional;
 
 @RestController
@@ -39,13 +38,13 @@ public class ItemController {
         if (oldItem.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-//        itemRepository.deleteItemRelationShopById(id);
         itemRepository.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/productos")
-    public ResponseEntity<Object> itemList(@RequestParam("page") int page, @Nullable @RequestParam("name") String name, @Nullable @RequestParam("brand") String brand) {
+    public ResponseEntity<Object> itemList(@RequestParam("page") int page, @Nullable @RequestParam("name") String name,
+                                           @Nullable @RequestParam("brand") String brand) {
         name = name == null ? "" : name;
         brand = brand == null ? "" : brand;
         return new ResponseEntity<>(itemRepository.getItemsInRangeBy(PageRequest.of(page,6), name, brand),
