@@ -26,18 +26,20 @@ const Register = (props) => {
         <main>
             <section id="register">
                 <h1>Crear una cuenta</h1>
-                <form className="" onSubmit={register}>
-                    {error.trim() && <p className="error">{error}</p>}
-                    <label htmlFor="email">Correo electrónico</label>
-                    <input type="email" id="email" name="email" required onChange={(e) => setEmail(e.target.value)} value={email}/>
+                <div className="register">
+                    <form className="" onSubmit={register}>
+                        {error.trim() && <p className="error">{error}</p>}
+                        <label htmlFor="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required onChange={(e) => setEmail(e.target.value)} value={email}/>
 
-                    <label htmlFor="pass">Contraseña</label>
-                    <input type="password" id="pass" name="pass" min="6" max="20" required onChange={(e) => setPassword(e.target.value)} value={password}/>
+                        <label htmlFor="pass">Contraseña</label>
+                        <input type="password" id="pass" name="pass" min="6" max="20" required onChange={(e) => setPassword(e.target.value)} value={password}/>
 
-                    <div className="submit">
-                        <button>Registrar</button>
-                    </div>
-                </form>
+                        <div className="submit">
+                            <button>Registrar</button>
+                        </div>
+                    </form>
+                </div>
             </section>
         </main>
     )

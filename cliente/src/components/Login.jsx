@@ -49,21 +49,23 @@ const Login = (props) => {
         <main>
             <section id="login">
                 <h1>¡Hola de nuevo!</h1>
-                {error.trim() && <p className="error">{error}</p>}
-                <form className="loginForm" onSubmit={login}>
-                    <label htmlFor="usuario">Correo electrónico</label>
-                    <input type="text" id="usuario" name="" onChange={e => setEmail(e.target.value)}
-                           value={email}/>
-                    <label htmlFor="pass">Contraseña</label>
-                    <input type="password" id="pass" name="" onChange={e => setPassword(e.target.value)}
-                           value={password}/>
-                    <span>
-                        <a href="#">¿No recuerdas tu contraseña?</a>
-                    </span>
-                    <div className="submit">
-                        <button>Acceder</button>
-                    </div>
-                </form>
+                <div className="login">
+                    {error.trim() && <p className="error">{error}</p>}
+                    <form className="loginForm" onSubmit={login}>
+                        <label htmlFor="usuario">Correo electrónico</label>
+                        <input type="text" id="usuario" name="" onChange={e => setEmail(e.target.value)}
+                            value={email}/>
+                        <label htmlFor="pass">Contraseña</label>
+                        <input type="password" id="pass" name="" onChange={e => setPassword(e.target.value)}
+                            value={password}/>
+                        <span>
+                            <a href="#">¿No recuerdas tu contraseña?</a>
+                        </span>
+                        <div className="submit">
+                            <button>Acceder</button>
+                        </div>
+                    </form>
+                </div>
             </section>
         </main>
     );
