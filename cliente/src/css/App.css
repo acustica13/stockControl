@@ -56,18 +56,8 @@ main {
 /* LOGIN */
 /***************************************/
 #login {
-  width: 30%;
-  margin:0 auto;
-  margin-top: 8rem;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 30px 60px -30px;
-    padding: 3rem 6rem;
-}
-
-.loginForm {
+  width: 100%;
   margin: 0 auto;
-
 }
 
 #login span {
@@ -94,12 +84,11 @@ main {
 
 #login button:hover {
   background-color: var(--emphasis-color-dark);
-
 }
 
 #login h1 {
-  margin: 1rem auto;
-  margin-bottom: 3rem;
+  margin: 3rem auto;
+  margin-top: 6vh;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -292,7 +281,7 @@ thead {
   margin-bottom: 2rem;
 }
 
-.editPage, .addPage {
+.editPage, .addPage, .login, .register {
   width: 40%;
   margin: 0 auto;
   background-color: var(--white);
@@ -301,6 +290,9 @@ thead {
 	border-radius: 10px;
 	box-shadow: 0 0 10px rgba(grey);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 30px 60px -30px;
+}
+.login, .register {
+  width: 30%;
 }
 
 .editPage label, .addPage label {
@@ -376,10 +368,14 @@ only screen and (max-width: 1500px){
     .container-products {
         width: 90%;
     }
+
     .title-search {
         width: 90%;
     }
 
+    .login, .register {
+      width: 40%;
+    }
 }
 
 @media
@@ -478,11 +474,11 @@ only screen and (max-width: 1040px){
     .App {
         background-color: var(--emphasis-color-dark);
     }
+
     .main-title {
         color: white;
     }
-/* only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px) { */
+
     .title-search {
         flex-direction: column;
         width: 100%;
@@ -507,8 +503,12 @@ only screen and (max-width: 1040px){
         width: 80%;
     }
 
-    .editPage, .addPage {
+    .editPage, .addPage, .login, .register {
         width: 80%;
+    }
+
+    .login, .register {
+      width: 60%;
     }
 
     /* Force table to not be like tables anymore */
