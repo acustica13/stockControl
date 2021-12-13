@@ -37,7 +37,7 @@ public class Seeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        if (false) {
+        if (true) {
             //Create a new Category
             Category category1 = categoryRepository.save(new Category("categoria1"));
             Category category2 = categoryRepository.save(new Category("categoria2"));
